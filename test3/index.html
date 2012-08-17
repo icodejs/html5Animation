@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script>
+      // http://www.html5canvastutorials.com/tutorials/html5-canvas-arcs/
+
+      (function (window, document) {
+        'use strict';
+
+        window.onload = function() {
+          var
+          width      = window.innerWidth,
+          height     = window.innerHeight,
+          canvas     = document.getElementById("canvas"),
+          context    = canvas.getContext("2d"),
+          x          = width / 2,
+          y          = height / 2,
+          radius     = y / 1.1,
+          startAngle = 1 * Math.PI,
+          endAngle   = 2 * Math.PI,
+          ccwise     = false;
+
+          canvas.width = width;
+          canvas.height = height;
+
+          context.beginPath();
+          // -- settings --
+
+          context.arc(x, y, radius, startAngle, endAngle, ccwise);
+          context.lineWidth = 15;
+          context.strokeStyle = 'blue';
+
+          // -- settings --
+          context.stroke();
+        };
+      }(window, document));
+
+    </script>
+  </head>
+  <body>
+    <h1>canvas arc</h1>
+    <canvas id="canvas" width="878" height="400"></canvas>
+  </body>
+</html>

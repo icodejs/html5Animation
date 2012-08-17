@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script>
+
+      (function (window, document) {
+        'use strict';
+
+        window.onload = function() {
+          var width   = window.innerWidth;
+          var height  = window.innerHeight;
+          var canvas  = document.getElementById("canvas");
+          var context = canvas.getContext("2d");
+
+          canvas.width = width;
+          canvas.height = height;
+
+          context.beginPath();
+
+          context.moveTo(200, canvas.height / 2 - 50);
+          context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+          context.lineWidth = 20;
+          context.strokeStyle = "#ff0000";                                      // set line color
+          context.lineCap = "round"; // "butt"; "square";
+
+          context.stroke();
+        };
+      }(window, document));
+
+      // CanvasRenderingContext2D
+      // ------------------------
+      // canvas: <canvas>
+      // fillStyle: "#000000"
+      // font: "10px sans-serif"
+      // globalAlpha: 1
+      // globalCompositeOperation: "source-over"
+      // lineCap: "round"
+      // lineJoin: "miter"
+      // lineWidth: 20
+      // miterLimit: 10
+      // shadowBlur: 0
+      // shadowColor: "rgba(0, 0, 0, 0)"
+      // shadowOffsetX: 0
+      // shadowOffsetY: 0
+      // strokeStyle: "#ff0000"
+      // textAlign: "start"
+      // textBaseline: "alphabetic"
+      // webkitBackingStorePixelRatio: 1
+      // webkitImageSmoothingEnabled: true
+
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="878" height="200"></canvas>
+  </body>
+</html>

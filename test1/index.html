@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-   <meta charset='utf-8'>
-    <title>Canvas test 1</title>
-    <style type="text/css">
-      canvas {
-        width: 800px;
-        height: 500px;
+<head>
+    <meta charset='utf-8'>
+    <style>
+      #myCanvas {
+        border: 1px solid #9C9898;
         border: 1px solid;
+        padding: 0;
+        margin: 0;
       }
     </style>
+    <script>
+
+      (function (window, document) {
+        'use strict';
+
+        window.onload = function() {
+          var canvas  = document.getElementById("myCanvas");
+          var context = canvas.getContext("2d");
+
+          context.beginPath();
+
+          context.moveTo(100, 150);
+          context.lineTo(450, 50);
+          context.lineWidth = 10;
+          context.strokeStyle = "#ff0000";                                      // set line color
+
+          context.stroke();
+        };
+      }(window, document));
+
+    </script>
   </head>
   <body>
-    <h1>Canvas test 1</h1>
-    <canvas id="game"></canvas>
-    <script>
-      (function (window, document) {
-        var canvas = document.getElementById('game');
-        var context = canvas.getContext('2d');
-      }(window, document));
-    </script>
+    <canvas id="myCanvas" width="878" height="200"></canvas>
   </body>
 </html>
