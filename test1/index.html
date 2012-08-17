@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset='utf-8'>
+    <title>Canvas test 1</title>
+    <style type="text/css">
+      canvas {
+        width: 800px;
+        height: 500px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas test 1</h1>
+    <canvas id="game"></canvas>
+    <script>
+      (function (window, document) {
+        var canvas = document.getElementById('game');
+        var context = canvas.getContext('2d');
+      }(window, document));
+    </script>
+  </body>
+</html>
