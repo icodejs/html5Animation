@@ -1,3 +1,3 @@
 # html5Animation
 
-HTML5 canvas test.
+HTML5 canvas tests.
