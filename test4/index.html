@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" href="../css/reset.css">
     <script>
-      // http://www.html5canvastutorials.com/tutorials/html5-canvas-arcs/
+      // http://www.html5canvastutorials.com/tutorials/html5-canvas-quadratic-curves/
 
       (function (window, document) {
         'use strict';
@@ -28,13 +28,27 @@
           context.beginPath();
           // -- settings --
 
-          context.arc(x, y, radius, startAngle, endAngle, ccwise);
-          context.lineWidth = 15;
-          context.strokeStyle = 'blue';
+          // 2.
+          // context.moveTo(188, 150);
+          //context.quadraticCurveTo(288, 0, 388, 150);
+
+          // 3.
+          // context.moveTo(188, 150);
+          //context.bezierCurveTo(140, 10, 388, 10, 388, 170);
+
+          // 4.
+          context.moveTo(100, 20);
+          context.lineTo(200, 160);                                             // line 1
+          context.quadraticCurveTo(230, 200, 250, 120);                         // quadratic curve
+          context.bezierCurveTo(290, -40, 300, 200, 400, 150);                  // bezier curve
+          context.lineTo(500, 90);                                              // line 2
+          context.lineWidth = 10;
 
           // -- settings --
           context.stroke();
-        };
+
+
+        }
 
       }(window, document));
 

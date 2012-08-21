@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" href="../css/reset.css">
     <script>
-      // http://www.html5canvastutorials.com/tutorials/html5-canvas-arcs/
+      //http://www.html5canvastutorials.com/tutorials/html5-canvas-line-joins/
 
       (function (window, document) {
         'use strict';
@@ -25,16 +25,38 @@
           canvas.width = width;
           canvas.height = height;
 
-          context.beginPath();
+          context.lineWidth = 10;
           // -- settings --
 
-          context.arc(x, y, radius, startAngle, endAngle, ccwise);
-          context.lineWidth = 15;
-          context.strokeStyle = 'blue';
+          // miter line join (left)
+          context.beginPath();
+          context.moveTo(99, 150);
+          context.lineTo(149, 50);
+          context.lineTo(199, 150);
+          context.lineJoin = "miter";
+          context.stroke();
+
+          // round line join (middle)
+          context.beginPath();
+          context.moveTo(239, 150);
+          context.lineTo(289, 50);
+          context.lineTo(339, 150);
+          context.lineJoin = "round";
+          context.stroke();
+
+          // bevel line join (right)
+          context.beginPath();
+          context.moveTo(379, 150);
+          context.lineTo(429, 50);
+          context.lineTo(479, 150);
+          context.lineJoin = "bevel";
+          context.stroke();
 
           // -- settings --
           context.stroke();
-        };
+
+
+        }
 
       }(window, document));
 
